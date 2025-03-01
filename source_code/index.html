@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Productivity Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <i class="fas fa-graduation-cap"></i>
+            <span>StudyTracker</span>
+        </div>
+        <button id="theme-toggle">
+            <i class="fas fa-moon"></i>
+        </button>
+    </nav>
+
+    <main>
+        <section class="dashboard">
+            <div class="overview-cards">
+                <div class="card">
+                    <h3>Pending Tasks</h3>
+                    <p id="pending-count">0</p>
+                </div>
+                <div class="card">
+                    <h3>Completed Tasks</h3>
+                    <p id="completed-count">0</p>
+                </div>
+                <div class="card">
+                    <h3>Overall Progress</h3>
+                    <div class="progress-bar">
+                        <div class="progress" id="overall-progress"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-content">
+                <div class="tasks-section">
+                    <h2>Manage Tasks</h2>
+                    <div class="add-task">
+                        <button id="add-task-btn">Add New Task</button>
+                    </div>
+                    <div class="task-list" id="task-list"></div>
+                </div>
+
+                <div class="progress-section">
+                    <h2>Progress Overview</h2>
+                    <div class="progress-stats">
+                        <div class="stat-card">
+                            <h3>Task Completion Rate</h3>
+                            <div class="progress-circle">
+                                <span id="completion-rate">0%</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Priority Distribution</h3>
+                            <div class="priority-bars">
+                                <!-- Priority bars remain the same -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Task Modal -->
+    <div id="task-modal" class="modal">
+        <div class="modal-content">
+            <h2>Add New Task</h2>
+            <form id="task-form">
+                <input type="text" id="task-title" placeholder="Task Title" required>
+                <select id="task-priority" required>
+                    <option value="">Select Priority</option>
+                    <option value="high">High</option>
+                    <option value="medium">Medium</option>
+                    <option value="low">Low</option>
+                </select>
+                <input type="date" id="task-deadline" required>
+                <textarea id="task-description" placeholder="Task Description"></textarea>
+                <div class="modal-buttons">
+                    <button type="submit">Add Task</button>
+                    <button type="button" id="close-modal">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
